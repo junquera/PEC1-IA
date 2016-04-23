@@ -1,0 +1,164 @@
+\documentclass[a4paper]{article}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{hyperref}
+\usepackage{url}
+
+\title{Inteligencia Artificial}
+\author{Gorgues Valenciano, Alejandro\\
+        \texttt{alegorval@gmail.com}
+        \and
+        Junquera Sánchez, Javier\\
+        \texttt{javier.junquera.sanchez@gmail.com}
+}
+
+\date{Marzo 2016}
+
+\begin{document}
+
+    \maketitle
+    \pagenumbering{arabic}
+
+    \section*{Introducción}
+
+    Haremos un pequeño análisis de los artículos \href{http://www.alanturing.net/turing_archive/pages/Reference%20Articles/BriefHistofComp.html}{\emph{A Brief History of Computing}}\cite{ABHOC} y \href{http://www.alanturing.net/turing_archive/pages/Reference%20Articles/What%20is%20AI.html}{\emph{What is Artificial Intelligence?}}\cite{WIAI} extraídos de \href{http://www.alanturing.net}{\textbf{AlanTuring.net}}. Hay que atender al hecho de que ambos artículos fueron escritos en el año 2000, y que algunos datos referentes a avances y tecnologías pueden estar desfasados. También, en algunos puntos de los artículos, podemos incluso apreciar una visión algo pesimista acerca del futuro de la Inteligencia Artificial, principalmente en lo que respecta a la tecnología necesaria para llevar acabo avances.
+
+    \section*{¿Qué es Inteligencia Artificial?}
+
+    Se suele entender como Inteligencia Artifical al hecho de dotar de inteligencia a máquinas para que se comporten igual que lo haría un humano, pero... ¿Qué es exáctamente \emph{inteligencia}?
+
+    \subsection*{¿Qué es inteligencia?}
+
+    Frente a las rutinas y conductas pautadas, la inteligencia se define como la capacidad de adaptar el comportamiento a las circunstancias, por mucho que estas cambien. Es decir, la capacidad de resolver un problema a través del razonamiento “sin fórmulas”. Sin embargo, no se considera una habilidad en sí, sino la convergencia de un conjunto de habilidades: aprendizaje, razonamiento, resolución de problemas, percepción y comprensión lingüística.
+
+    \subsubsection*{Aprendizaje}
+
+    Uno de los métodos de aprendizaje más sencillos de implementar es el de prueba error. Con este método, la máquina recuerda los estados en los que se encuentra un problema y qué resultado conllevan. De esta forma, recuerda un mapa por el que avanza a medida que avanza el desarrollo de la tarea. Algunas máquinas de juego son entrenadas incluso enfrentándose a sí mismas y generando dicho mapa de forma automática. Sin embargo, lo más interesante es conseguir que la máquina sea capaz de \underline{generalizar}.\\
+
+    Una máquina capaz de generalizar, por ejemplo, podría obtener la forma de conjugar un verbo regular conociendo cómo se conjugan otros verbos regulares. A través del método de aprendizaje ``de memoria", tendría que aprender la conjugación de todos los verbos, y fallaría al utilizar alguno que no tuviese definido.
+
+    \subsubsection*{Razonamiento}
+
+    Razonar es la capacidad de realizar deducciones a través de premisas. Estas deducciones pueden ser \emph{deductivas} o \emph{inductivas}. A continuación explicaremos cada tipo de inferencia con los premisas y una conclusión:
+
+    \begin{itemize}
+        \item \textbf{Inferencia deductiva:}
+        \begin{enumerate}
+            \item ``El coche sólo puede acelerar si se pisa el acelerador."
+            \item ``El conductor no está pisando el acelerador."
+            \item ``El coche no está acelerando."
+        \end{enumerate}
+        \item \textbf{Inferencia inductiva:}
+        \begin{enumerate}
+            \item ``Cuando no piso el acelerador de mi coche, éste reduce su velocidad hasta quedarse parado"
+            \item ``Hay uno coche reduciendo la velocidad."
+            \item ``Puede que el coche esté reduciendo su velocidad porque no hay nadie pisando el acelerador."
+        \end{enumerate}
+    \end{itemize}
+
+    En el primer caso, las veracidad de las premisas \textbf{garantiza} la veracidad de la conclusión. Si embargo, mediante la inferencia inductiva sólamente permite estimar la conclusión. En una referencia deductiva hay hechos, mientras que en una inductiva hay datos, entre los que se puede colar información irrelevante. La capacidad de conocer la relevancia de los datos aportados en una premisa es uno de los grandes retos de la Inteligencia Artificial.
+
+    \subsubsection*{Resolución de problemas}
+
+    La resolución de problemas consiste en dados unos parámetros, obtener un resultado. Los métodos de resolución pueden ser para \emph{propósitos específicos} o para \emph{propósitos generales}. La resolución de propósitos específicos suele estar programada detalladamente, mientras que en la resolución de propósitos generales se suelen definir estados (estado actual, estado objetivo...) y operaciones. Así puede ser por ejemplo el problema de las jarras ---tenemos dos jarras, una de 3 litros y otra de 4 litros y queremos que en una de ellas haya 2 litros conociendo las operaciones de llenado, vaciado y transvase--- u otros problemas clásicos de la Inteligencia Artificial.
+
+    \subsubsection*{Percepción}
+
+    La percepción permite analizar el entorno de la máquina mediante distintos sensores. Así como los humanos tenemos ojos, oídos y piel; las máquinas pueden tener dispositivos con los que interpretar la realidad (cámaras, micrófonos...). Pero no sólo tienen que poder ver u oir, tienen que saber adaptar su conocimiento a la información que captan ---no reciben la misma señal al ver una cara de frente que de lado--- e interpretarla correctamente.\\
+
+    Este es uno de los campos en los que más se ha avanzado. En el artículo cita que uno de los primeros sistemas: \emph{FREDDY}. Era capaz de encontrar su objetivo entre varios objetos al azar y seleccionarlo con una pinza. Actualmente muy superado por cualquier sistema de reconocimiento de imágenes o sonido como buscadores por voz o incluso la red neuronal de Google, que ya \href{http://www.microsiervos.com/archivo/tecnologia/red-neuronal-google-saber-donde-tomo-foto-mirarla-sin-datos-gps.html}{\textit{es capaz de saber dónde se tomó una fotografía sin analizar los datos GPS}}\cite{GNEUROIA}.
+
+    \subsubsection*{Comprensión lingüística}
+
+    El lenguaje es la convención del conjunto de signos empleados para la comunicación. Es importante que el lenguaje sea \emph{productivo}, es decir, que sea lo suficientemente completo como para poder formular cualquier expresión. La máquina inteligente, debe ser capaz de comunicarse en un lenguaje aunque no lo entienda.\\
+
+    El lenguaje es uno de los puntos clave dentro de la Inteligencia Artificial, hasta tal punto que una de las formas más extendidas de probar estos sistemas es el \emph{Test de Turing}, que consiste en poner a un interrogador a conversar ``a ciegas" (a través de texto) con un humano y una máquina, superando la máquina la prueba si el interrogador no es capaz de distinguir quién es quién.\\
+
+    ¿Llegará el día en que nuestras máquinas puedan enfrentarse exitosas al test Voight-Kampff\cite{VK}?
+
+    \section*{Una breve historia de la computación}
+
+    \subsection*{¿Qué es un ordenador?}
+
+    Históricamente, los ordenadores eran empleados que calculaban en concordancia con métodos efectivos. Estos computadores humanos hacían el mismo cálculo que se realiza hoy en día por los computadores, y muchos de ellos fueron empleados en el ámbito del comercio, gobierno, y de investigación. El uso del término máquina de computación incrementó desde los años 20, refiriéndose a cualquier máquina que hace el trabajo de una persona. Durante los 40 y al comienzo de los 50, con el avance de las máquinas de computación electrónicas, la frase ‘máquina de computación’ derivó a la palabra ‘computador’, inicialmente se usaba con el prefijo ‘electrónico’ o ‘digital’.
+
+    \subsection*{Babbage}
+
+    El excéntrico Charles Babbage fue el profesor Lucasiano de las matemáticas en la universidad de Cambridge desde 1828 hasta 1839. La propuesta de Babbage del motor diferencial era una máquina digital de computación para el propósito de la producción automática de tablas matemáticas. El motor diferencial se compone totalmente de componentes mecánicos. Los números eran representados en el sistema decimal por la posición del engranaje de 10 dientes montado en columnas. Babbage exhibió un modelo pequeño del motor anterior en 1822. Él nunca pudo completarlo a escala real, sin embargo pudo completar pequeños fragmentos de ella. La pieza más larga se encuentra en el museo de ciencia de Londres. Babbage la usó para realizar trabajo computacional costoso, calculando varias tablas matemáticas. En 1990, la máquina diferencia número 2 de Babbage fue construida a partir de los diseños de Babbage y actualmente se muestra en el Museo de Ciencia de Londres.\\
+
+    El sueco Georg y Edvard Scheutz construyeron una versión modificada de la máquina de Babbage. Se realizaron tres en total, un prototipo y dos modelos comerciales, uno de ellos se vendió al observatorio de Albany, Nueva York, y las otras a la oficina de registro general en Londres, donde calculaba y mostraba tablas.\\
+
+    La propuesta del motor analítico de Babbage, era la más ambiciosa, y se usaba como fin para las máquinas digitales de computación de uso general. Se pretendía que el motor analítico tuviese almacenamiento en memoria y una unidad central de procesamiento, siendo capaz de este modo seleccionar a partir de varias alternativas, las salidas. El comportamiento del motor analítico estaría controlado por las instrucciones de un programa contenido en tarjetas perforadas conectadas entre sí con cintas.\\
+
+    Babbage trabajó cercanamente con Ada Lovelace, la hija del poeta Byron, después de que el lenguaje de programación moderno se llamase ADA. Lovelace  pensó en la posibilidad de usar el motor analítico para la computación no numérica, sugiriendo que el motor podía ser capaz de producir piezas de música.\\
+
+    Un modelo muy grande del motor analítico se encontraba en construcción al mismo tiempo que la muerte de Babbage en 1871, pero un modelo a gran escala nunca se construyó. La idea del motor de cálculo para el propósito general de Babbage nunca fue olvidada, especialmente en Cambridge, y fue usado ocasionalmente como tópico a la hora de comer en los cuarteles del Government Code and Cypher School en tiempo de guerra.
+
+    \subsection*{Computadores analógicos}
+
+    Las primeras máquinas de computación para uso generalizado usadas no eran digitales, sino analógicas. En computadores analógicos, las cantidades numéricas son representadas por ejemplo por el ángulo de rotación del eje o la diferencia del potencial electrónico. Así, el voltaje de salida a tiempo podía representar la velocidad del momento del objeto a ser modelado.\\
+
+    James Thomson, hermano de Lord Kelvin, inventó el integrador  mecánico de ruedas y disco que llevó a la creación de la computación analógica. Los dos hermanos construyeron un dispositivo para la computación de la integral de un producto dada dos funciones, y Kelvin describió las máquinas analógicas de propósito general para integrar ecuaciones diferenciales lineales de cualquier orden y solucionar ecuaciones lineales simultáneamente. El computador analógico más famoso fue su máquina de predicción de mareas, que fue usado en el puerto de Liverpool hasta 1960. Los dispositivos analógicos mecánicos basados en el integrador de rueda y disco fueron usados durante la primera guerra mundial para cálculo armamentístico. Después de la guerra, el diseño del integrador fue mejorado considerablemente por Hannibal Ford.\\
+
+    Stanley Fifer informó de que el computador analógico mecánico semiautomático fue construido en Inglaterra por la firma de Manchester Metropolitan Vickers  previa a 1930; sin embargo,  hasta ahora no he podido verificar este hecho. En 1931, Vannevar Bush, que trabajaba en el MIT, construyó el analizador diferenciar, la primera  computadora analógica mecánica automática a gran escala para fines generales. El diseño de Bush fue basado en el integrador. Varias copias de sus máquinas fueron usadas alrededor del mundo.\\
+
+    Requiere a un mecánico con experiencia con un martillo de plomo para usar el analizador diferencial en otro trabajo. Después, Bush y sus amigos sustituyeron el integrador de rueda y disco y otros componentes mecánicos por electromecánicos, y finalmente dispositivos electrónicos.\\
+
+    Un analizador diferencial puede ser conceptualizado como una colección de ‘cajas negras’ conectadas de una manera que permite obtener un gran feedback. Cada caja realiza un proceso fundamental. A la hora de hacer que la máquina realice un trabajo, las cajas están conectadas juntas de tal manera que se ejecuta el conjunto de procesos deseados. En el caso de las máquinas electrónicas, se realizaba conectando cables en los enchufes en el panel.\\
+
+    Desde que todas las cajas trabajan en paralelo, un analizador diferencial electrónico resuelve el conjunto de ecuaciones rápidamente. En contra de esto, se tiene que añadir el coste de adaptar el problema a la máquina analógica, y crear el hardware para que realice el problema. Una gran desventaja de la computación analógica es el alto coste, relativo a las máquinas digitales cuando se trata de mejorar la precisión. Durante los 60 y 70 había un interés considerable en las máquinas ‘híbridas’, donde una sección analógica es controlada y programada por la sección digital.
+
+    \subsection*{La máquina universal de Turing}
+
+    En 1935, en la universidad de Cambridge, Turing concibió el principio de los computadores modernos. Describió  una máquina digital abstracta que consistía en una memoria limitada y un escáner que se mueve hacia atrás y adelante alrededor de la memoria, símbolo por símbolo, leyendo lo que encuentra y escribiendo los símbolos. Estas acciones del escáner son dictadas por un programa de instrucciones que es almacenado en la memoria en forma de símbolos. Esto es el concepto del almacenamiento por programa de Turing, e implícitamente  en la posibilidad de operar de la máquina y modificar su propio programa. La máquina de computación de Turing de 1935 es conocida como la máquina universal de Turing.\\
+
+    Durante la segunda guerra mundial, Turing fue un criptoanalista líder en el Government Code and Cypher School, Bletchley Park. Allí conoció el trabajo de Thomas Flower que incluía el interruptor electrónico a gran escala y a gran velocidad. Sin embargo Turing no pudo convertir el proyecto de construir la máquina de computación electrónica de almacenamiento de programas hasta la finalización de las hostilidades en Europa en 1945.\\
+
+    Turing dió pensamiento a la pregunta de la máquina inteligente en tiempos de guerra. Compañeros en Bletchley Park recuerdan numerosas discusiones  fuera de servicio sobre el tema, y en un momento en concreto Turing escribió un informe sobre sus ideas. Uno de sus compañeros, Donald Michie recuerda a Turing hablando de vez en cuando sobre la posibilidad de máquinas computacionales aprendiendo de la experiencia y resolviendo problemas que significaban la búsqueda en el espacio de la solución posible, guiado por un conjunto de principios. La terminología moderna para la idea anterior es la ‘búsqueda heurística’, una búsqueda heurística es cualquier conjunto de reglas que reducen la cantidad búsqueda requerida para encontrar una solución al problema.
+
+    \subsection*{Electromecánica contra la computación electrónica}
+
+    Con algunas excepciones, las primeras máquinas digitales de computación eran electromecánicas. Esto quiere decir, que sus componentes básicos eran pequeños, conducidos por electricidad, e interruptores mecánicos llamados ‘relés’. Estos operaban lentamente, mientras que los componentes básicos del computador electrónico no tenían movimiento salvo los electrones que operaban muy rápido. Las máquinas computadoras digitales electromecánicas se construyeron antes y durante la segunda guerra mundial por Howard Aiken en la universidad de Hardvard, George Stibitz en los laboratorios de Bell Telephone, Turing en la universidad de Princeton en Bletchley Park, y Konrad Zuse en Berlín. En cuanto a Zuse, pertenece el honor de haber construido el primer computador digital que trabaja para un propósito general y que es controlado por programas.\\
+
+    Los relés eran muy lentos y poco fiables como para crear un computador digital a gran escala de propósito general con ellos. Fue el desarrollo de técnicas digitales de gran velocidad utilizando tubos de vacío lo que hizo posible los computadores modernos.\\
+
+    El amplio uso de los tubos de vacío para el procesamiento de datos digitales parece haber comenzado por el ingeniero Thomas Flower que trabajaba en el Londres, en la Estación de investigación de la oficina de correos en Dollis Hill. El equipamiento digital electrónico diseñado por Flowers en 1934, para controlar las conexiones entre teléfonos, entró en operaciones en 1939, y fue involucrado entre tres mil y cuatro mil tubos de vacío ejecutándose a la vez. En 1938-1939 Flowers trabajó en un sistema de procesamiento de datos experimentales de alta velocidad electrónico digital, que involucraba el almacenamiento de datos. El objetivo de Flowers, conseguido después de la guerra, fue que dicho equipo podría reemplazar a los sistemas existentes, menos fiables, construidos a partir de los relés y usados en las centrales telefónicas. Flowers no investigó la idea de usar equipamiento electrónico para los cálculos numéricos, pero remarcó que al comienzo de la guerra con Alemania en 1939 él era posiblemente la única persona en Gran Bretaña  que vio que los tubos de vacío podían ser usados a gran escala para obtener una rápida velocidad en la computación digital.
+
+    \subsection*{Atanasoff}
+
+    El primer uso comparable de las tuberías de vacío en los Estados Unidos parece haber sido por John Atanasoff en lo que era antes la universidad del estado de Iowa. Durante el periodo de 1937 hasta 1942 Atanasoff desarrolló varias técnicas para el uso de las tuberías de vacío para realizar cálculos numéricos digitalmente. En 1939, con la ayuda de su estudiante Clifford Berry, Atanasoff comenzó a construir lo que en algunas veces se llamaba el computador de Atanasoff-Berry, o ABC, una máquina electrónica digital para propósito específico a pequeña escala para solucionar sistemas de ecuaciones algebraicas lineales. La máquina contenía aproximadamente 300 tuberías de vacío. Aunque la parte electrónica  de la máquina funcionaba correctamente, el computador nunca llegó a funcionar de manera fiable, los errores aparecían a partir del lector binario de tarjetas. Su trabajo se interrumpió en 1942 cuando Atanasoff se fue del estado de Iowa.
+
+    \subsection*{Colossus}
+
+    El primer computador digital electrónico que funcionaba correctamente fue Colossus, usado por los criptoanalistas de Bletchley Park desde 1944. Desde el inicio de la guerra, GC\&CS fue descifrando con éxito las comunicaciones de radio alemanas codificadas por medio del sistema de Enigma, y al comienzo de 1942 cerca de 39.000 mensajes interceptados fuero descifrados cada mes gracias a las máquinas electromecánicas conocidas como ‘bombes’. Estas máquinas fueron diseñadas por Turing y Gordon Welchman.\\
+
+    Durante la segunda mitad de 1940, los mensajes cifrados por medio de un método diferente fueron interceptados. Este nuevo método de cifrado, conocido como ‘Fish’ por GC\&CS, permaneció incodificable hasta 1941; el tráfico de mensajes fue leído por primera vez en julio de 1942. Basado en una teleimpresora de código binario, Fish fue usado por encima del código morse de Enigma para la encriptación señales de alta importancia.\\
+
+    La necesidad de descifrar esta información vital tan rápido como fuese posible llevó a Max Newman a proponer en noviembre de 1942 que partes de la desencriptación podrían ser automatizadas, requiriendo dispositivos electrónicos de alta velocidad. La primera máquina diseñada y construida en base a la especificación de Newman, conocida como Heath Robinson, fue una base de relés con circuitos electrónicos para el conteo. Instalado en junio de 1943, Heath Robinson fue poco fiable y lenta, y su velocidad de uso de citas de las tarjetas se rompía continuamente, pero probó lo que el método de Newman  quería realizar. Turing recomendó que la aproximación de Newman  se basara en Flowers para mejorar la fiabilidad de Robinson. Flowers ofreción un diseño y una construcción de una máquina electrónica con las mismas funciones que Heath Robinson. Flowers recibió la aprobación de GC\&CS, pero no obstante procedió a trabajar independientemente en la estación  de investigación de la oficina de correos en Dillis Hill.\\
+
+    En total diez Colossi fueron construidas. Desde un punto de vista criptoanalítico, la mayor diferencia entre el prototipo Colossus I y el resto de máquinas radica en el añadido de un accesorio especial, proveniente del descubrimiento clave por los criptoanalistas Donald Michie y Jack Good. Esto amplió la función de Colossus desde ‘el control por rueda’ hasta ‘la rotura de la rueda’. Los patrones de la rueda cambiaron eventualmente por los alemanes entre Berlín y las estaciones remotas, en particular, los diversos comandantes de la armada en el campo de batalla.\\
+
+    Colossus I contiene cerca de 1600 tuberías de vacío y cada una de las subsecuentes máquinas cerca de 2400 tubos. Como el ABC, Colossus fallaba en dos partes de los computadores modernos. El primero es que no almacena internamente programas. Para realizar una nueva tarea, el operador tiene que cambiar el cableado de la máquina, usando enchufes e interruptores. El segundo es que Colossus no estaba definido para uso general, sino diseñado para la tarea de la criptoanalítica utilizando operaciones booleanas para el conteo.\\
+
+    F.H. Hinsley, historiador oficial de GC\&CS, ha estimado que la guerra en Europa se acortó por lo menos en dos años como resultado de la inteligencia de señales llevada a cabo en Bletchley Park, donde Colossus tomo partido. Una gran parte de Colossi fue destruido una vez cesaron las hostilidades. Algunos de sus paneles electrónicos terminaron en el laboratorio de máquinas computacionales de Newman en Manchester. Por lo menos uno de los Colossus fue almacenado por GCHQ el sucesor de GC\&CS. El último Colossus terminó de utilizarse en 1960.\\
+
+    Aquellos que conocían el Colossus, les fue prohibido como acto de secreto oficial informar de su conocimiento. Hasta los 70, donde unos pocos tenían que tenían una idea de la computación electrónica fueron usados durante la segunda guerra mundial. En 1970 y 1975, respectivamente, Good y Michie publicaron notas dando una información por encima de Colossus. Para 1983, Flowers recibió la posibilidad del Gobierno Británico de publicar todo el contenido del hardware de Colossus I. Los detalles del resto de las máquinas, del accesorio especial  que se usó en Colossi,  y del algoritmo criptoanalítico que utilizaba, no se desclasificaron hasta 1996. Incluso hoy aunque quedan documentos sin clasificar.\\
+
+    Para aquellos familiarizados con la máquina universal de Turing de 1935, y el programa de almacenamiento asociado, los bastidores de equipo electrónico digital de Flowers indicaron la posibilidad de utilizar un gran número de tubos de vacío para poner en práctica una máquina de computación digital de almacenamiento por programa de propósito general y de alta velocidad. La guerra ha terminado, Newman no tarda en establecer el  Royal Society Computing Machine Laboratory en la universidad de Manchester para dicho proceso.
+
+    \subsection*{Motor de computación automático de Turing}
+
+    Turing y Newman pensaron en las mismas líneas. En 1945 Turing se unió al National Physical Laboratory (NPL) en Londres, para diseñar y desarrollar un computador digital electrónico de almacenamiento por programas para el trabajo científico. John Womersley, superior de Turing en NPL, bautizó la máquina propuesta de Turing como el motor de computación automática, o ACE, en honor al motor diferencial de Babbage y el motor analítico.\\
+
+    La ‘propuesta de Turing en el desarrollo de la división matemática de un motor de computación automático (ACE)’ fue la primera especificación relativa de un computador digital electrónico de almacenamiento y de propósito general. Un archivo NPL daba la fecha de la propuesta en 1945; El asistente de Turing en NPL en mayo de 1946, Michael Woodger,  creía que la propuesta se escribió entre octubre y diciembre de 1945.
+    El anterior ‘First Draft of a Report on the EDVAC’, compuesto por von Neumann, contiene pocos detalles en su ingeniería, en particular al hardware electrónico. La propuesta de Turing, en la otra mano, poseía muchos detalles de los diseños de circuitos y especificaciones de las unidades de hardware, ejemplos de programas en código máquina, e incluso una estimación del coste de construir la máquina. ACE y EDVAC difirieron una del otro.\\
+
+    Turing vio que la velocidad y la memoria eran la clave de la computación. El diseño de Turing tenía mucho en común con la arquitectura de hoy en día RISC y se componía por una memoria alta velocidad de más o menos la misma capacidad que uno de los primeros ordenadores Macintosh. El diseño de ACE de Turing habría sido construido como se había previsto y se encontraría a un nivel distinto de las primeras computadoras. Sin embargo, el progreso del motor de computación automático de Turing fue lento, debido a la dificultad de organización en NPL, y en 1948 personal harto de trabajar allí, dejaron el NPL para trabajar en el Computing Machine Laboratory de Newman. No fue hasta mayo de 1950 que un piloto del motor de computación automático, fue construido por Wilkinson, Edward Newman, Woodger, y otras personas, ejecutaron el primer programa. Con una velocidad de operación  de 1MHz, el modelo piloto ACE fue por algún tiempo el ordenador más rápido en el mundo.\\
+
+    Las ventas de DEUCE, la versión de producción del piloto modelo ACE, excedieron las 30. Los fundamentos del diseño ACE  fueron desarrollados por Harry Huskey en el computador Bendix G15. Podría decirse que el G15 fue el primer ordenador personal; cerca de 400 se vendieron alrededor del mundo, DEUCE y el G15 se utilizaron hasta 1970. Otro computador derivado del diseño de ACE de Turing, el MOSAIC, jugó un papel en la defensa aérea británica durante el periodo de la guerra fría; otros derivados incluían el Packard-Bell PB250.
+
+    \newpage
+    \bibliographystyle{plain}
+    \bibliography{bibliografia}
+\end{document}
